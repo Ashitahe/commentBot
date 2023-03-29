@@ -4,10 +4,19 @@
   "version": "0.0.1",
   "description": "comment bot",
   "author": "Asuhe",
+  "type": "module",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
     "package": "plasmo package"
+  },
+  "compilerOptions": {
+    "paths": {
+      "~*": [
+        "./src/*"
+      ]
+    },
+    "baseUrl": "."
   },
   "dependencies": {
     "plasmo": "0.67.4",
@@ -25,7 +34,12 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://*/*",
+      "http://*/*"
+    ],
+    "permissions": [
+      "cookies",
+      "https://*.bilibili.com/*"
     ]
   }
 }
